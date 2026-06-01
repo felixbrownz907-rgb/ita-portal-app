@@ -1,0 +1,6 @@
+{
+  "name": "IT International Academy",
+  "description": "IT INTERNATIONAL ACADEMY: A premium, technology-first learning platform with real-time class attendance registration, AI-powered grading, and comprehensive student monitoring.",
+  "requestFramePermissions": ["camera", "microphone", "display-capture", "fullscreen"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

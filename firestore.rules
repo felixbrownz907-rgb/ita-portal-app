@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // AUTH HELPERS
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isVerifiedAdmin() {
+      return isSignedIn() && 
+             request.auth.token.email_verified == true && 
+             (request.auth.token.email == 'felixbrownz907@gmail.com');
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // MEDIA ITEM VALIDATION
+    function isValidMediaItem(data) {
+      return data.keys().hasAll(['title', 'type', 'url']) &&
+             data.title is string && data.title.size() <= 200 &&
+             data.type in ['video', 'image', 'audio'] &&
+             data.url is string && data.url.size() <= 20000 &&
+             (data.get('description', '') is string) &&
+             (data.get('channel', 'NEWS') in ['NEWS', 'PARTNERSHIP', 'ACADEMY', 'SUCCESS', 'MARKETING']) &&
+             (data.get('isAI', false) is bool);
+    }
+
+    // 1. MARKETING MEDIA COLLECTION
+    match /marketing_media/{mediaId} {
+      // Publicly viewable broadcast
+      allow get, list: if true;
+      
+      // Admin only write
+      allow create: if isVerifiedAdmin() && 
+                    isValidId(mediaId) && 
+                    isValidMediaItem(request.resource.data) &&
+                    request.resource.data.createdAt == request.time;
+                    
+      allow update: if isVerifiedAdmin() && 
+                    isValidId(mediaId) &&
+                    isValidMediaItem(request.resource.data) &&
+                    request.resource.data.createdAt == resource.data.createdAt;
+                    
+      allow delete: if isVerifiedAdmin() && isValidId(mediaId);
+    }
+  }
+}

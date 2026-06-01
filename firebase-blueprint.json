@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "MediaItem": {
+      "title": "Media Item",
+      "description": "Information about a broadcast media asset for the ITA TV system.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Display title of the media" },
+        "type": { "type": "string", "enum": ["video", "image", "audio"], "description": "Type of media" },
+        "url": { "type": "string", "format": "uri", "description": "URL to the media asset" },
+        "duration": { "type": "string", "description": "Duration string or 'AUTO'" },
+        "category": { "type": "string", "description": "Categorization of the content" },
+        "description": { "type": "string", "description": "Descriptive script or summary" },
+        "uploadedBy": { "type": "string", "description": "Username of the uploader" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "isAI": { "type": "boolean", "description": "Flag for AI-generated content" },
+        "channel": { 
+          "type": "string", 
+          "enum": ["NEWS", "PARTNERSHIP", "ACADEMY", "SUCCESS", "MARKETING"],
+          "description": "Target broadcast channel"
+        }
+      },
+      "required": ["title", "type", "url", "description"]
+    }
+  },
+  "firestore": {
+    "/marketing_media/{mediaId}": {
+      "schema": "MediaItem",
+      "description": "Collection of all broadcast media assets for the global node."
+    }
+  }
+}

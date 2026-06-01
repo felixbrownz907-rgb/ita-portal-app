@@ -1,0 +1,36 @@
+src/views/PracticalLab.tsx:import { Beaker, CheckCircle2, ChevronRight, Info, AlertTriangle, Play, RefreshCw, Terminal as TerminalIcon, Cpu, Zap, Settings, ArrowRight, Bot, GripVertical, Sparkles } from 'lucide-react';
+src/views/PracticalLab.tsx:            <Zap className="w-8 h-8" />
+src/views/PracticalLab.tsx:                  <Zap className="w-5 h-5" /> Initialize Cable Strip
+src/views/Students.tsx:import { Plus, Search, Edit2, Trash2, Phone, BookOpen, Hash, MoreHorizontal, Bot, User, BarChart3, Clock, MapPin, X, Sparkles, TrendingUp, DollarSign, CheckCircle, Users, ShieldCheck, Zap } from 'lucide-react';
+src/views/Students.tsx:            <Zap className="w-4 h-4 text-amber-500 animate-pulse" /> Flash Node Sync
+src/views/AIMentor.tsx:import { Send, Bot, User as UserIcon, Sparkles, GraduationCap, Zap, Book, RotateCcw, X, Info } from 'lucide-react';
+src/views/AcademyGuide.tsx:import { Play, BookOpen, CheckCircle, Upload, Zap, ShieldCheck, HelpCircle, ArrowRight, Video, Sparkles } from 'lucide-react';
+src/views/AcademyGuide.tsx:                 <Zap className="w-6 h-6 rotate-45" />
+src/views/AcademyGuide.tsx:               Connect to Academy Admin <Zap className="w-4 h-4 group-hover/sub:animate-bounce" />
+src/views/WhatsAppAI.tsx:import { MessageSquare, Settings, Play, Send, Bot, CheckCircle2, XCircle, History, Terminal, Zap, ShieldCheck, Link2 } from 'lucide-react';
+src/views/WhatsAppAI.tsx:                    <Zap className="w-5 h-5" />
+src/views/AttendanceRegister.tsx:import { Calendar, CheckCircle, Clock, AlertCircle, MapPin, UserCheck, ShieldCheck, Zap, Search } from 'lucide-react';
+src/views/AttendanceRegister.tsx:                  <Zap className="w-3 h-3 text-amber-500 animate-pulse" />
+src/views/AttendanceRegister.tsx:            <Zap className="absolute -right-4 -bottom-4 w-32 h-32 opacity-10 group-hover:rotate-12 transition-transform duration-700" />
+src/views/AttendanceRegister.tsx:                       <Zap className="w-4 h-4 text-primary" /> Today's Sessions: {today}
+src/views/AttendanceRegister.tsx:                                <Zap className="w-3 h-3" />
+src/views/AttendanceRegister.tsx:                  <Zap className="w-4 h-4" />
+src/views/WorkSubmissions.tsx:import { FileUp, Send, CheckCircle, Clock, FileText, ImageIcon, Search, AlertCircle, Bot, Eye, Check, X, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+src/views/WorkSubmissions.tsx:            <Zap className="w-4 h-4 text-amber-500 animate-pulse" />
+src/views/Dashboard.tsx:import { Users, BookOpen, Calendar, Bell, Layers, Zap, TrendingUp, Beaker, Library, Bot, Sparkles, MessageSquare, Globe, ArrowUpRight, ShieldCheck, Video, Settings, RotateCw, Hash, FileText, BrainCircuit, UserCheck, GraduationCap } from 'lucide-react';
+src/views/Dashboard.tsx:    { id: 'interlink', label: 'Student Interlink', desc: 'Unified interaction Hub', icon: Zap, color: 'bg-primary', textColor: 'text-secondary', badge: 'New Hub' },
+src/views/Dashboard.tsx:    { id: 'interlink', label: 'Student Interlink', desc: 'Sync with Academy Admin', icon: Zap, color: 'bg-primary', textColor: 'text-secondary', badge: 'Active' },
+src/views/Dashboard.tsx:    { id: 'financial', label: 'Tuition Node', desc: 'Audit My Payments', icon: Zap, color: 'bg-white' },
+src/views/Dashboard.tsx:                 <Zap className={cn("w-3 h-3", isSyncing && "animate-spin")} /> 
+src/views/Dashboard.tsx:                        <Zap className="w-3 h-3" /> Core Academic Trajectory
+src/views/Dashboard.tsx:                      <Zap className="w-4 h-4 text-orange-500" />
+src/views/Dashboard.tsx:                      <Zap className="w-5 h-5 text-primary" />
+src/views/Dashboard.tsx:                            <Zap className="w-5 h-5" />
+src/views/Interlink.tsx:  Hash, Calendar, Bot, ShieldCheck, Zap, UserPlus, Trash2, Plus
+src/views/Interlink.tsx:              { id: 'all', label: 'Nodes', icon: Zap },
+src/views/Interlink.tsx:                                       <Zap className="w-4 h-4" /> TXN REF: {p.transactionId || 'NOT_PROVIDED'}
+src/views/Interlink.tsx:                    <Zap className="w-5 h-5 text-primary animate-pulse" />
+src/components/Navbar.tsx:import { LogOut, Home, BookOpen, Calendar, Users, DollarSign, Info, Eye, Beaker, Library, Bot, Video, MessageSquare, Sparkles, Globe, Settings, Zap, Bell, X, AlertCircle, FileText, BrainCircuit, ShieldCheck } from 'lucide-react';
+src/components/Navbar.tsx:    { id: 'interlink', label: 'Interlink', icon: Zap },
+src/components/Navbar.tsx:          <Zap className="w-5 h-5" />
+src/components/Navbar.tsx:                       <Zap className="w-10 h-10" />

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* The Exact Rich Dark Blue Base Canvas */
+  --bg-system-main: #05112e;       /* Deep Velvet Dark Royal Blue */
+  --bg-system-secondary: #0a1b44;  /* Slightly Lighter Blue for Panels/Cards */
+  
+  /* Clean Accents that pop on Dark Blue */
+  --accent-cyan: #00f2fe;         /* Vibrant Cyan for Registration Codes */
+  --text-primary: #ffffff;        /* Crisp White for Main Headers */
+  --text-muted: #8fa3c7;          /* Balanced Blue-Gray for Body Text */
+}
+
+@theme {
+  --color-primary: #00f2fe; 
+  --color-primary-hover: #00c6ff; 
+  --color-secondary: #0a1b44; 
+  --color-bg-light: #05112e; 
+  --color-dark-blue: #05112e;
+  
+  --color-white: #0a1b44;          /* Panels/Cards background mapping */
+  --color-slate-50: #06153a;
+  --color-slate-100: #0d2254;
+  --color-slate-200: #102a66;
+  --color-slate-400: #38bdf8;
+  --color-slate-500: #38bdf8;
+  --color-slate-600: #38bdf8;
+  --color-slate-800: #ffffff;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #ffffff;
+  --color-gray-50: #06153a;
+  --color-gray-100: #0d2254;
+  --color-gray-200: #102a66;
+  --color-gray-300: #14357c;
+  --color-gray-400: #e2e8f0;
+  --color-gray-500: #38bdf8;
+  --color-gray-600: #38bdf8;
+  --color-gray-700: #ffffff;
+  --color-gray-800: #ffffff;
+  --color-gray-900: #ffffff;
+  --color-gray-950: #ffffff;
+  --color-blue-50: #06153a;
+  --color-blue-100: #0d2254;
+  --color-blue-200: #102a66;
+  --color-blue-400: #38bdf8;
+  --color-blue-500: #38bdf8;
+  --color-blue-600: #00f2fe;       /* Change clunky thick blue accents to Cyan */
+  --color-blue-900: #e2e8f0;       /* Soft Platinum White body text style */
+  --color-blue-950: #ffffff;       /* Pure white headers style */
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base Body Style Overrides for Absolute Dark Canvas */
+html, body, #root {
+  background-color: var(--bg-system-main) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Custom scrollbar follows the theme */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-system-main);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-[#0a1b44] border border-[#00f2fe]/15 rounded-2xl;
+  }
+
+  .glass-panel {
+    @apply bg-[#0a1b44] border border-[#00f2fe]/15 rounded-3xl;
+  }
+}
+
+@layer components {
+  .markdown-body {
+    @apply text-sm leading-relaxed space-y-6 text-[#8fa3c7];
+  }
+  .markdown-body h1 { @apply text-3xl font-black uppercase tracking-tight mb-6 border-b border-[#00f2fe]/15 pb-4 text-white italic; }
+  .markdown-body h2 { @apply text-2xl font-black uppercase tracking-tight mt-10 mb-4 text-white; }
+  .markdown-body h3 { @apply text-xl font-black uppercase tracking-tight mt-8 mb-3 text-white; }
+  .markdown-body p { @apply mb-6; }
+  .markdown-body ul { @apply list-disc list-inside space-y-3 mb-6 pl-4; }
+  .markdown-body ol { @apply list-decimal list-inside space-y-3 mb-6 pl-4; }
+  .markdown-body code { @apply bg-[#00f2fe]/5 px-2 py-0.5 font-mono text-[0.85em] font-bold text-[#00f2fe] border border-[#00f2fe]/10; }
+  .markdown-body pre { @apply bg-[#05112e] text-white p-8 font-mono text-xs overflow-x-auto my-8 border border-[#00f2fe]/20 shadow-xl; }
+  .markdown-body blockquote { @apply border-l-4 border-[#00f2fe] pl-6 italic text-white/60 my-8 py-2 bg-[#00f2fe]/5; }
+  .markdown-body table { @apply w-full border-collapse my-8 border border-[#00f2fe]/15; }
+  .markdown-body th, .markdown-body td { @apply border border-[#00f2fe]/15 p-4 text-left; }
+  .markdown-body th { @apply bg-[#00f2fe]/5 font-black uppercase text-[11px] tracking-widest text-[#00f2fe]; }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: white;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2563eb;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 120s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure high visibility white/cyan typing color inside dark blue input contexts */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select,
+#assignmentTitleField {
+  color: #ffffff !important;
+}
+
+/* Ensure clear placeholders against dark panels */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(143, 163, 199, 0.7) !important;
+}
+
+/* This reduces the zoom/edge crowding without changing colors */
+body {
+    padding: 10px !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* This ensures your containers stay within the screen boundaries */
+div {
+    max-width: 100% !important;
+}
+
+/* Neon glow effect for curriculum titles and financial displays */
+.neon-glow {
+  color: #00FFFF !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 3px #00FFFF, 0 0 5px #00FFFF !important;
+}
+
+
